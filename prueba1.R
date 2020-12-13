@@ -10,4 +10,6 @@ tokens=mtcars %>% mutate(nombre = rownames(mtcars)) %>% tidytext::unnest_tokens(
 glimpse(tokens)
 tokens %>% count(nombre,modelos)
 
+tokens %>% count(modelos) %>% ggplot(aes(x=modelos,y=n)) + geom_col() + coord_flip()
+
 
