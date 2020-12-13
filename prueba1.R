@@ -7,5 +7,7 @@ mtcars=mtcars
 
 ?unnest_tokens
 tokens=mtcars %>% mutate(nombre = rownames(mtcars)) %>% tidytext::unnest_tokens(input=nombre,output="modelos",token = "words", drop = F)
+glimpse(tokens)
+tokens %>% count(nombre,modelos)
 
-tokens %>% count(modelos)
+
